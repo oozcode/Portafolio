@@ -1,0 +1,9 @@
+.carousel-item img {
+    width: 80%; /* Ajusta el ancho al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+    #carouselExampleIndicators {
+        max-width: 500px; /* Define el ancho máximo del carousel */
+        margin: 10 auto; /* Centra el carousel horizontalmente */
+    }
+    
+}
