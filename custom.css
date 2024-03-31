@@ -1,9 +1,14 @@
-.carousel-item img {
-    width: 80%; /* Ajusta el ancho al 100% del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto */
-    #carouselExampleIndicators {
-        max-width: 500px; /* Define el ancho máximo del carousel */
-        margin: 10 auto; /* Centra el carousel horizontalmente */
-    }
-    
+/* Estilo para ajustar el tamaño del carrusel */
+#Slider1.carousel {
+    width: 80%; /* Ancho del carrusel */
+    max-width: 600px; /* Ancho máximo del carrusel */
+    height: 300px; /* Altura del carrusel */
+    margin: 0 auto; /* Centrar el carrusel horizontalmente */
+}
+
+/* Estilo para ajustar el tamaño de las imágenes dentro del carrusel */
+#Slider1.carousel .carousel-item img {
+    width: 100%; /* Ancho de la imagen al 100% del contenedor */
+    height: 100%; /* Altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Cubrir el área de la imagen sin distorsión */
 }
