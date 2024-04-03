@@ -1,7 +1,13 @@
-#carouselExampleCaptions{
-    width: 40%;
-    margin-bottom: 80%;
+body{
+    background-image: url(imagenes/fondo.jpg);
+    background-size: cover;
 }
-#carousel-inner{
-    margin-bottom: 40%;
-}
+#carouselExampleDark {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Mueve el carrusel hacia atrás y hacia arriba en un 50% de su propio ancho y altura */
+    width: 800px;
+    height: 400px;
+  }
+  
