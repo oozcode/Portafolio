@@ -12,7 +12,7 @@ body {
 }
 
 .outer-wrapper {
-  width: 80%;
+  width: 60%;
   margin: 50px auto;
 }
 
@@ -21,10 +21,10 @@ body {
   margin-bottom: 50px;
   padding-bottom: 55%;
   position: relative;
-  border: 10px solid #fff;
   background-color: #efefe8;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  border-radius: 2%;
 }
 .s-wrap > input {
   display: none;
