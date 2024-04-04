@@ -60,9 +60,7 @@ body {
 .s-wrap .s-item-4 {
   background-image: url("imagenes/porta4.jpg");
 }
-.s-wrap .s-item-5 {
-  background-image: url("https://images.unsplash.com/photo-1439736637365-748f240b24fb?crop=entropy&fit=crop&fm=jpg&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=800");
-}
+
 
 .s-type-1 .s-control {
   position: absolute;
@@ -154,47 +152,33 @@ body {
 .s-type-1 #s-4:checked ~ .s-nav .s-nav-4 {
   display: block;
 }
-.s-type-1 #s-5:checked ~ .s-content {
-  transform: translateX(-80%);
-}
-.s-type-1 #s-5:checked ~ .s-control .s-c-5 {
-  background-color: #333;
-}
-.s-type-1 #s-5:checked ~ .s-nav .s-nav-5 {
-  display: block;
+.wrapper {
+  height: 200vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items:left;
 }
 
-@keyframes slider-animation {
-  0%,
-    7% {
-    transform: translateX(0%);
-  }
-  12.5%,
-    19.5% {
-    transform: translateX(-20%);
-  }
-  25%,
-    32% {
-    transform: translateX(-40%);
-  }
-  37.5%,
-    44.5% {
-    transform: translateX(-60%);
-  }
-  50%,
-    57% {
-    transform: translateX(-80%);
-  }
-  62.5%,
-    69.5% {
-    transform: translateX(-60%);
-  }
-  75%,
-    82% {
-    transform: translateX(-40%);
-  }
-  87.5%,
-    94.5% {
-    transform: translateX(-20%);
+.typing-demo {
+  width: 22ch;
+  animation: typing 1s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
   }
 }
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
