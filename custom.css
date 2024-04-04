@@ -153,5 +153,51 @@ body {
   display: block;
 }
 
+<<<<<<< Updated upstream
 
+=======
+@keyframes slider-animation {
+  0%,
+    7% {
+    transform: translateX(0%);
+  }
+  12.5%,
+    19.5% {
+    transform: translateX(-20%);
+  }
+  25%,
+    32% {
+    transform: translateX(-40%);
+  }
+  37.5%,
+    44.5% {
+    transform: translateX(-60%);
+  }
+  50%,
+    57% {
+    transform: translateX(-80%);
+  }
+  62.5%,
+    69.5% {
+    transform: translateX(-60%);
+  }
+  75%,
+    82% {
+    transform: translateX(-40%);
+  }
+  87.5%,
+    94.5% {
+    transform: translateX(-20%);
+  }
+}
+
+/*AGENDAR USUARIO*/
+
+.agenda{
+  margin-top: 5%;
+  margin-left: 5%;
+  display:flex;
+  height: 20%
+}
+>>>>>>> Stashed changes
 
