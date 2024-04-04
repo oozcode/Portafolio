@@ -152,10 +152,18 @@ body {
 .s-type-1 #s-4:checked ~ .s-nav .s-nav-4 {
   display: block;
 }
+.row{
+  background-color: #a28383;
+  margin-right: 20%;
+  margin-left: 20%;
+  border-radius: 3%;
+}
+.col-4 img {
+  max-width: 100%; /* La imagen no será más ancha que el contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  border-radius: 10%;
+}
 
-<<<<<<< Updated upstream
-
-=======
 @keyframes slider-animation {
   0%,
     7% {
@@ -199,5 +207,5 @@ body {
   display:flex;
   height: 20%
 }
->>>>>>> Stashed changes
+
 
