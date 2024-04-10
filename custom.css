@@ -152,6 +152,94 @@ body {
 .s-type-1 #s-4:checked ~ .s-nav .s-nav-4 {
   display: block;
 }
+.row{
+  background-color: #a28383;
+  margin-right: 20%;
+  margin-left: 20%;
+  border-radius: 3%;
+}
+.col-4 img {
+  min-height: 2vh;
+  max-width: 100%; /* La imagen no será más ancha que el contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  border-radius: 10%;
+}
+footer {
+  
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 
+.buttons {
+  min-width: 700px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+  text-decoration: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: #889ba7;
+  color: #f1f1f1;
+  border-radius: 40%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+}
+
+.buttons a:hover {
+  transform: scale(1.2);
+}
+
+
+@keyframes slider-animation {
+  0%,
+    7% {
+    transform: translateX(0%);
+  }
+  12.5%,
+    19.5% {
+    transform: translateX(-20%);
+  }
+  25%,
+    32% {
+    transform: translateX(-40%);
+  }
+  37.5%,
+    44.5% {
+    transform: translateX(-60%);
+  }
+  50%,
+    57% {
+    transform: translateX(-80%);
+  }
+  62.5%,
+    69.5% {
+    transform: translateX(-60%);
+  }
+  75%,
+    82% {
+    transform: translateX(-40%);
+  }
+  87.5%,
+    94.5% {
+    transform: translateX(-20%);
+  }
+}
+
+/*AGENDAR USUARIO*/
+
+.agenda{
+  margin-top: 5%;
+  margin-left: 5%;
+  display:flex;
+  height: 20%
+}
 
 
