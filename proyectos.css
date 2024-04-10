@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #eeeeea;
+    background-color:#b0b0ba;
 }
 
 .wrapper {
@@ -21,7 +21,7 @@ body {
     height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: center;
 }
 
 .card {
@@ -101,4 +101,9 @@ input:checked + label .description {
 }
 .card[for="c4"] {
     background-image: url(imagenes/img-4.jpeg);
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8); 
 }
