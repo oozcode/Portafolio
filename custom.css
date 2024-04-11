@@ -9,6 +9,7 @@ body {
   padding: 0;
   background-image: url(imagenes/fondo1.jpg);
   color: #eee;
+  box-sizing: border-box;
 }
 
 .outer-wrapper {
@@ -345,7 +346,7 @@ form {
 .input-box > textarea {
   width: 100%;
   height: 130px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(192, 111, 111, 0.1);
   border: 3px solid transparent;
   letter-spacing: 1px;
   transition: 0.3s;
@@ -355,7 +356,7 @@ form {
 }
 
 .input-box > i {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 252, 252, 0.3);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -410,156 +411,63 @@ form > button:hover,
   }
 }
 
-.contenedor{
-  min-height: 100vh;
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
   width: 100%;
+  padding: 20px;
+  object-fit: cover; 
+  max-width: 100%;
 }
 
-.service-wrappe{
-  padding: 5% 8%;
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-.servicio{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.titulo-servicio{
-  color: #fff;
-  font-size: 5rem;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: transparent;
-  letter-spacing: 4px;
-  background-color: rgb(4, 52, 83);
-  background: linear-gradient(8deg,rgba(8,52,83,1) 0%,rgba(0,230,173,1)41%, rgba(41,17,45,1)100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
-.titulo-servicio::after{
+/* Clear floats after the columns */
+.row:after {
   content: "";
-  position: absolute;
-  top: 100%;
-  left: 10%;
-  height: 8px;
-  width: 80%;
-  border-radius: 8px;
-  background-color
-  : rgba(255, 255, 255, .05);
+  display: table;
+  clear: both;
 }
 
-.titulo-servicio span{
-  position: absolute;
-  top: 100%;
-  left: 10%;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background-color: #72e2ae;
-  animation: anim 3s linear infinite;
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
 }
 
-@keyframes anim{
-  95%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-    left: 88%;
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
   }
 }
 
-.cartas{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
-  margin-top: 80px;
-}
-.carta{
-  height: 350px;
-  width: 370px;
-  background-color: #1c2335;
-  padding: 3% 8%;
-  border: 0.2px solid rgba(114,226,174,0.2);
-  border-radius: 8px;
-  transition: .6s;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-.carta:after{
-  content: "";
-  position: absolute;
-  top: 150%;
-  left: -200px;
-  width: 120%;
-  transform: rotate(50deg);
-  background-color: #fff;
-  height: 18px;
-  filter: blur(30px);
-  opacity: 0.5;
-  transition: 1s;
-}
-.carta:hover:after{
-  width: 225%;
-  top: -100%;
-}
-.carta j{
-  color:#72e2ae;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 4.8rem;
-}
-
-.carta h2{
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.carta p{
-  text-align: left;
-  width: 100%;
-  margin: 12px 0;
-  color: rgba(255, 255, 255, .6);
-
-}
-.carta:hover{
-  background-color: transparent;
-  transform: translateY(-8px);
-  border-color: #00ff37;
-}
-
-.carta:hover j{
-  color: #00ff37;
-}
-
-@media screen and (max-width: 900px) {
-  .titulo-servicio {
-      font-size: 2rem; /* Reducir aún más el tamaño del texto para pantallas más pequeñas */
-  }
-
-  .cartas {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustar el diseño de la cuadrícula para pantallas más pequeñas */
-  }
-
-  .carta {
-      padding: 3% 5%; /* Reducir el relleno aún más para pantallas más pequeñas */
-  }
-
-  .carta j {
-      font-size: 3rem; /* Reducir aún más el tamaño del ícono para pantallas más pequeñas */
-  }
-
-  .carta h2 {
-      font-size: 1.5rem; /* Reducir aún más el tamaño del título para pantallas más pequeñas */
-  }
-
-  .carta p {
-      font-size: 0.9rem; /* Reducir aún más el tamaño del texto para pantallas más pequeñas */
-  }
-}
