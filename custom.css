@@ -204,24 +204,24 @@ body {
 
 /*AGENDAR USUARIO*/
 
-.agenda {
+.Agenda {
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imagenes/fondo1.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-
+  height: 100vh; /* Ajustar la altura al 100% del viewport */
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 1fr); /* Utilizar fr en lugar de porcentajes para mayor flexibilidad */
   padding: 20px;
   gap: 10px;
-  width: 1000px;
-  margin-top: 10%
+  max-width: 1000px; /* Cambiar width a max-width para que sea responsive */
+  margin: 5% auto; /* Centrar el contenedor verticalmente y alinear horizontalmente */
 }
 
 .box-info {
@@ -231,9 +231,10 @@ body {
   gap: 50px;
 }
 
-.box-info > h1 {
+.box-info h1 {
   text-align: left;
   letter-spacing: 5px;
+  font-size: 2rem; /* Ajustar el tamaño de fuente */
 }
 
 .data {
@@ -242,11 +243,11 @@ body {
   gap: 25px;
 }
 
-.data > p {
+.data p {
   font-size: 1rem;
 }
 
-.data > p > i {
+.data p i {
   color: crimson;
   margin-right: 10px;
   font-size: 25px;
@@ -257,18 +258,20 @@ body {
   gap: 15px;
 }
 
-.links > a {
+.links a {
   text-decoration: none;
   width: 40px;
   height: 40px;
   background: crimson;
   text-align: center;
-  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrar el contenido verticalmente */
+  transition: background 0.5s; /* Añadir transición a los cambios de fondo */
 }
 
-.links > a > i {
+.links a i {
   color: #fff;
-  line-height: 40px;
   font-size: 20px;
 }
 
@@ -283,60 +286,49 @@ form {
   position: relative;
 }
 
-.input-box > input {
+.input-box input,
+.input-box textarea {
   width: 100%;
-  height: 40px;
+  height: 40px; /* Ajustar la altura del input */
   padding: 0 10px;
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   border: 3px solid transparent;
   letter-spacing: 1px;
-  transition: 0.3s;
+  transition: border-color 0.3s; /* Añadir transición a los cambios de borde */
   color: #fff;
 }
 
-.input-box > input:focus,
-.input-box > textarea:focus {
+.input-box input:focus,
+.input-box textarea:focus {
   border-bottom: 3px solid crimson;
   animation: shake 0.2s;
 }
 
-.input-box > input::placeholder,
-.input-box > textarea::placeholder {
+.input-box input::placeholder,
+.input-box textarea::placeholder {
   color: #a3a3a3;
 }
 
-.input-box > input:focus::placeholder,
-.input-box > textarea:focus::placeholder {
+.input-box input:focus::placeholder,
+.input-box textarea:focus::placeholder {
   color: transparent;
 }
 
-.input-box > textarea {
-  width: 100%;
-  height: 130px;
-  background: rgba(192, 111, 111 ,0.1);
-  border: 3px solid transparent;
-  letter-spacing: 1px;
-  transition: 0.3s;
-  color: #fff;
-  padding: 10px;
-  outline: none;
-}
-
-.input-box > i {
+.input-box i {
   color: rgba(255, 252, 252, 0.3);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 15px;
-  transition: 0.3s;
+  transition: color 0.3s; /* Añadir transición al cambio de color del icono */
 }
 
-.input-box > input:focus ~ i {
+.input-box input:focus ~ i {
   color: crimson;
 }
 
-form > button {
+form button {
   background: crimson;
   color: #fff;
   border: none;
@@ -344,11 +336,11 @@ form > button {
   cursor: pointer;
   font-size: 1rem;
   padding: 10px;
-  transition: 0.2s;
+  transition: background 0.5s; /* Añadir transición al cambio de fondo del botón */
 }
 
-form > button:hover,
-.links > a:hover {
+form button:hover,
+.links a:hover {
   background: rgb(150, 13, 40);
 }
 
@@ -370,14 +362,13 @@ form > button:hover,
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 10%; /* Ajustar el margen superior */
   }
-  .box-info {
-    gap: 15px;
-  }
-  .box-info > h1 {
-    font-size: 1.5rem;
+  .box-info h1 {
+    font-size: 1.5rem; /* Ajustar el tamaño de fuente */
   }
 }
+
 
 /*BLOG*/
 .header {
@@ -444,6 +435,7 @@ form > button:hover,
 .contenedor{
   min-height: 100vh;
   width: 100%;
+  margin-bottom: 2vh;
 }
 
 .service-wrappe{
@@ -506,6 +498,7 @@ form > button:hover,
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 30px;
+
   margin-top: 80px;
 }
 .carta{
@@ -701,17 +694,38 @@ form > button:hover,
 
 /*FOOTER*/
 
-.footer ul {
+.footer {
   display: flex;
-  grid-auto-flow: row;
-  grid-gap: 24px;
-  justify-items: center;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  margin-top: 5vh;
+  width: 100%;
+  background-color: #002a38;
+  line-height: 1.3;
+  font-family: Menlo, monospace;
 }
 
-@media (min-width: 500px) {
+.footer ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; /* Alinea el contenido al centro horizontalmente */
+}
+
+.footer li {
+  margin-right: 24px;
+}
+
+@media (max-width: 900px) {
   .footer ul {
-    grid-auto-flow: column;
+    flex-direction: column;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .footer{
+    height: 9vh;
   }
 }
 
@@ -734,17 +748,6 @@ form > button:hover,
   animation: wave-animation 0.3s infinite;
 }
 
-/* below is just for demo styling */
-
-.footer {
-  display: flex;
-  height: 10vh;
-  width: 100%;
-  background-color: #002a38;
-  line-height: 1.3;
-  font-family: Menlo, monospace;
-}
-
 @keyframes wave-animation {
   0%,
   100% {
@@ -757,3 +760,4 @@ form > button:hover,
     transform: rotate(-15deg);
   }
 }
+
