@@ -702,7 +702,7 @@ form > button:hover,
 /*FOOTER*/
 
 .footer ul {
-  display: inline-grid;
+  display: flex;
   grid-auto-flow: row;
   grid-gap: 24px;
   justify-items: center;
