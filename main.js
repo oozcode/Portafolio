@@ -1,14 +1,12 @@
 /*popup de servicios a agenda*/
 document.addEventListener("DOMContentLoaded", () => {
   const abrirmodal = document.querySelector("#agendar");
-  const btncerrarmodal = document.querySelector("#btn-cerrar");
-  const modal = document.querySelector("#modal");
+  const modalElement = document.querySelector("#bootstrapModal");
+  const modal = new bootstrap.Modal(modalElement);
 
-  abrirmodal.addEventListener("click", () => {
-      modal.showModal();
-  });
-
-  btncerrarmodal.addEventListener("click", () => {
-      modal.close();
-  });
+  if (abrirmodal) {
+      abrirmodal.addEventListener("click", () => {
+          modal.show();
+      });
+  }
 });
