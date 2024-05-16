@@ -296,8 +296,36 @@ form {
   background: rgba(255, 255, 255, 0.1);
   border: 3px solid transparent;
   letter-spacing: 1px;
-  transition: border-color 0.3s; /* Añadir transición a los cambios de borde */
+  transition: border-color 0.3s; 
   color: #fff;
+}
+.input-box textarea {
+  height: 100px;
+}
+.form-check-input:checked + .form-check-label {
+  font-weight: bold;
+  color: #007bff;
+}
+
+
+.form-check-input:checked + .form-check-label::before {
+  background-color: #007bff;
+  border-color: #007bff; 
+}
+
+
+.animate-fade {
+  animation: fadeIn 0.5s ease;
+}
+
+.box {
+    border: 1px solid #e21414; /* Color y grosor del borde */
+    padding: 20px; /* Espacio interno dentro del contenedor */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+.animate-fade[style] {
+  opacity: 0;
 }
 
 .input-box input:focus,
@@ -761,30 +789,4 @@ form button:hover,
     transform: rotate(-15deg);
   }
 }
-/*popup en menu de servicios*/
-.modal-body,.modal-title {
-    color: black;
-}
- /* Estilo para el botón de cerrar */
- .modal-footer .btn-secondary {
-  background-color: #000000; /* Color de fondo */
-  border-color: #000000;    /* Color del borde */
-  color: white;             /* Color del texto */
-}
 
-.modal-footer .btn-secondary:hover {
-  background-color: #5a6268; /* Color de fondo al pasar el ratón */
-  border-color: #545b62;     /* Color del borde al pasar el ratón */
-}
-
-/* Estilo para el botón de agendar */
-.modal-footer .btn-primary {
-  background-color: #990303; /* Color de fondo */
-  border-color: #007bff;    /* Color del borde */
-  color: white;             /* Color del texto */
-}
-
-.modal-footer .btn-primary:hover {
-  background-color: #b93232; /* Color de fondo al pasar el ratón */
-  border-color: #004085;     /* Color del borde al pasar el ratón */
-}
