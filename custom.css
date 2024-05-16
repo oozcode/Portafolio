@@ -765,4 +765,26 @@ form button:hover,
 .modal-body,.modal-title {
     color: black;
 }
+ /* Estilo para el botón de cerrar */
+ .modal-footer .btn-secondary {
+  background-color: #000000; /* Color de fondo */
+  border-color: #000000;    /* Color del borde */
+  color: white;             /* Color del texto */
+}
 
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268; /* Color de fondo al pasar el ratón */
+  border-color: #545b62;     /* Color del borde al pasar el ratón */
+}
+
+/* Estilo para el botón de agendar */
+.modal-footer .btn-primary {
+  background-color: #990303; /* Color de fondo */
+  border-color: #007bff;    /* Color del borde */
+  color: white;             /* Color del texto */
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #b93232; /* Color de fondo al pasar el ratón */
+  border-color: #004085;     /* Color del borde al pasar el ratón */
+}
