@@ -1,4 +1,4 @@
-/*popup de servicios*/
+/*popup de servicios a agenda*/
 document.addEventListener("DOMContentLoaded", () => {
   const abrirmodal = document.querySelector("#agendar");
   const btncerrarmodal = document.querySelector("#btn-cerrar");
