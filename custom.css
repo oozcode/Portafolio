@@ -762,5 +762,7 @@ form button:hover,
   }
 }
 /*popup en menu de servicios*/
-
+.modal-body,.modal-title {
+    color: black;
+}
 
