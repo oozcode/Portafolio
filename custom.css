@@ -298,20 +298,20 @@ form {
   border: 3px solid transparent;
   letter-spacing: 1px;
   transition: border-color 0.3s; 
-  color: #bc13fe;
+  color: #a701e9;
 }
 .input-box textarea {
   height: 100px;
 }
 .form-check-input:checked + .form-check-label {
   font-weight: bold;
-  color: #007bff;
+  color: bc13fe;
 }
 
 
 .form-check-input:checked + .form-check-label::before {
-  background-color: #007bff;
-  border-color: #007bff; 
+  background-color: #bc13fe;
+  border-color: #bc13fe; 
 }
 
 
