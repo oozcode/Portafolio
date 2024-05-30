@@ -7,7 +7,7 @@
     {% load static %}
     <link rel="Stylesheet" href="x{% static 'css/bootstrap.min.css' %}">
     <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <link rel="Stylesheet" href="custom.css">
+    <link rel="Stylesheet" href="x{%static 'css/custom.css'%}">
 </head>
 <body>
     <header>
@@ -114,7 +114,7 @@
                   <div class="col-12 col-sm-6 col-md-4 ">
                 <div class="our-team">
                   <div class="picture">
-                    <img class="img-fluid" src="imagenes/pic2.jpg">
+                    <img class="img-fluid" src="{%static "imagenes/pic2.jpg" %}">
                   </div>
                   <div class="team-content">
                     <h3 class="name">Oscar Oviedo</h3>
@@ -167,7 +167,7 @@
         
         </main>
     </header>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>  
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="Stylesheet" href="css/bootstrap.min.css">
-    <link rel="Stylesheet" href="custom.css">
+    <link rel="Stylesheet" href="x{% static 'css/bootstrap.min.css' %}">
+    <link rel="Stylesheet" href="x{%static 'css/custom.css'%}">
 </head>
 <body>
     <header>
@@ -116,7 +116,7 @@
       </div>
     </footer>
   </header>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/main.js" %}"></script>
 </body>
 </html>
