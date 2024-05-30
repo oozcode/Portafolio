@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="Stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="Stylesheet" href="x{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
     <link rel="Stylesheet" href="custom.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar"> 
           <div class="container-fluid">
-          <img src="imagenes/icono.svg" alt="Bootstrap" width="30" height="24">
+          <img src="{% static "imagenes/icono.svg" %}" alt="Bootstrap" width="30" height="24">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -23,7 +24,7 @@
                   <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="proyectos.html">Proyectos</a>
+                  <a class="nav-link" href="{% url "proyectos*3" %}">Proyectos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="servicios.html">Servicios</a>
