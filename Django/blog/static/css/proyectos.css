@@ -101,7 +101,7 @@ input:checked + label .description {
     background-image: url(../img/img-3.jpeg);
 }
 .card[for="c4"] {
-    background-image: url(imagenes/img-4.jpeg);
+    background-image: url(../img/img-4.jpeg);
 }
 
 .card:hover {
