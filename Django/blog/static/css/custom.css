@@ -8,7 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(imagenes/fondo1.jpg);
+  background-image: url(../img/fondo1.jpg);
   color: #572364;
   box-sizing: border-box;
 }
@@ -51,16 +51,16 @@ body {
   background-size: cover;
 }
 .s-wrap .s-item-1 {
-  background-image: url("imagenes/porta1\ \(1\).jpg");
+  background-image: url("../img/porta1\ \(1\).jpg");
 }
 .s-wrap .s-item-2 {
-  background-image: url("imagenes/porta2.jpg");
+  background-image: url("../img/porta2.jpg");
 }
 .s-wrap .s-item-3 {
-  background-image: url("imagenes/porta3.jpg");
+  background-image: url("../img/porta3.jpg");
 }
 .s-wrap .s-item-4 {
-  background-image: url("imagenes/porta4.jpg");
+  background-image: url("../img/porta4.jpg");
 }
 
 
@@ -209,7 +209,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imagenes/fondo1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/fondo1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

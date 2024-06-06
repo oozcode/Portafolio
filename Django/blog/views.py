@@ -1,32 +1,21 @@
 from django.shortcuts import render
 
-# Create your views here.
 def index(request):
-    context = {
-        
-    }
-    return render(request,'pages/index.html',context)
+    context = {}
+    return render(request, 'pages/index.html', context)
 
 def proyectos(request):
-    context ={
+    context = {}
+    return render(request, 'pages/proyectos.html', context)
 
-    }
-    return render(request,'pages/proyectos.html',context)
+def agenda(request):
+    context = {}
+    return render(request, 'pages/agenda.html', context)
 
-def Agenda(request):
-    context={
-
-    }
-    return render(request,'pages/Agenda.html',context)
 def blog(request):
-    context={
+    context = {}
+    return render(request, 'pages/blog.html', context)
 
-    }
-    return render(request,'pages/blog.html',context)
 def servicios(request):
-    context={
-
-    }
-    return render(request,'pages/servicios.html',context)
-
-    
+    context = {}
+    return render(request, 'pages/servicios.html', context)

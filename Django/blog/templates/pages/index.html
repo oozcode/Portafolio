@@ -1,173 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load static %}
-    <link rel="Stylesheet" href="x{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <link rel="Stylesheet" href="x{%static 'css/custom.css'%}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar"> 
-          <div class="container-fluid">
-          <img src="{% static "imagenes/icono.svg" %}" alt="Bootstrap" width="30" height="24">
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url "proyectos*3" %}">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="servicios.html">Servicios</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.html">Blog</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="Agenda.html">Agendar</a>
-                </li>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+      <div class="container-fluid">
+        <img src="{% static 'img/icono.svg' %}" alt="Bootstrap" width="30" height="24">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'proyectos' %}">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="Agenda.html">Agendar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="outer-wrapper">
+        <div class="s-wrap s-type-1" role="slider">
+          <input type="radio" id="s-1" name="slider-control" checked="checked">
+          <input type="radio" id="s-2" name="slider-control">
+          <input type="radio" id="s-3" name="slider-control">
+          <input type="radio" id="s-4" name="slider-control">
+          <ul class="s-content">
+            <li class="s-item s-item-1"></li>
+            <li class="s-item s-item-2"></li>
+            <li class="s-item s-item-3"></li>
+            <li class="s-item s-item-4"></li>
+          </ul>
+          <div class="s-control">
+            <label class="s-c-1" for="s-1"></label>
+            <label class="s-c-2" for="s-2"></label>
+            <label class="s-c-3" for="s-3"></label>
+            <label class="s-c-4" for="s-4"></label>
+          </div>
+          <div class="s-nav">
+            <label class="s-nav-1 right" for="s-2"></label>
+            <label class="s-nav-1 left" for="s-4"></label>
+            <label class="s-nav-2 left" for="s-1"></label>
+            <label class="s-nav-2 right" for="s-3"></label>
+            <label class="s-nav-3 left" for="s-2"></label>
+            <label class="s-nav-3 right" for="s-4"></label>
+            <label class="s-nav-4 left" for="s-3"></label>
+            <label class="s-nav-4 right" for="s-1"></label>
+          </div>
+        </div>
+      </div>
+      <div class="contain">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="{% static 'img/pic1.jpg' %}">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Antonio Lankin</h3>
+                <h4 class="title">Web Developer</h4>
+              </div>
+              <ul class="social">
+                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
               </ul>
             </div>
           </div>
-        </nav>
-        <main>
-          <div class="outer-wrapper">
-            <div class="s-wrap s-type-1" role="slider">
-              <input type="radio" id="s-1" name="slider-control" checked="checked">
-              <input type="radio" id="s-2" name="slider-control">
-              <input type="radio" id="s-3" name="slider-control">
-              <input type="radio" id="s-4" name="slider-control">
-             
-              <ul class="s-content">
-                <li class="s-item s-item-1"></li>
-                <li class="s-item s-item-2"></li>
-                <li class="s-item s-item-3"></li>
-                <li class="s-item s-item-4"></li>
-                
-              </ul>
-              <div class="s-control">
-                <label class="s-c-1" for="s-1"></label>
-                <label class="s-c-2" for="s-2"></label>
-                <label class="s-c-3" for="s-3"></label>
-                <label class="s-c-4" for="s-4"></label>
-                
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="{% static 'img/bastian.jpg' %}">
               </div>
-              <div class="s-nav">
-                <label class="s-nav-1 right" for="s-2"></label>
-                <label class="s-nav-1 left" for ="s-4"></label>
-                <label class="s-nav-2 left" for="s-1"></label>
-                <label class="s-nav-2 right" for="s-3"></label>
-                <label class="s-nav-3 left" for="s-2"></label>
-                <label class="s-nav-3 right" for="s-4"></label>
-                <label class="s-nav-4 left" for="s-3"></label>
-                <label class="s-nav-4 right" for="s-1"></label>
-               
-          
+              <div class="team-content">
+                <h3 class="name">Bastian Carcamo</h3>
+                <h4 class="title">Web Developer</h4>
               </div>
-            </div>
-          </div>
-          <div class="contain">
-            <div class="row">
-              <div class="col-12 col-sm-6 col-md-4 ">
-                <div class="our-team">
-                  <div class="picture">
-                    <img class="img-fluid" src="/imagenes/pic1.jpg">
-                  </div>
-                  <div class="team-content">
-                    <h3 class="name">Antonio Lankin</h3>
-                    <h4 class="title">Web Developer</h4>
-                  </div>
-                  <ul class="social">
-                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                  </ul>
-                </div>
-              </div>
-                  <div class="col-12 col-sm-6 col-md-4 ">
-                <div class="our-team">
-                  <div class="picture">
-                    <img class="img-fluid" src="imagenes/bastian.jpg">
-                  </div>
-                  <div class="team-content">
-                    <h3 class="name">Bastian Carcamo</h3>
-                    <h4 class="title">Web Developer</h4>
-                  </div>
-                  <ul class="social">
-                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                  </ul>
-                </div>
-              </div>
-                  <div class="col-12 col-sm-6 col-md-4 ">
-                <div class="our-team">
-                  <div class="picture">
-                    <img class="img-fluid" src="{%static "imagenes/pic2.jpg" %}">
-                  </div>
-                  <div class="team-content">
-                    <h3 class="name">Oscar Oviedo</h3>
-                    <h4 class="title">Web Developer</h4>
-                  </div>
-                  <ul class="social">
-                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                  </ul>
-                </div>
-              </div>
-                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                
-              </div>
-            </div>
-          </div>
-        <footer>
-          <div class="footer">
-            <div class="marquee">
-              <ul class="marquee-content">
-                <li><i class="fab fa-github"></i></li>
-                <li><i class="fab fa-codepen"></i></li>
-                <li><i class="fab fa-free-code-camp"></i></li>
-                <li><i class="fab fa-dev"></i></li>
-                <li><i class="fab fa-react"></i></li>
-                <li><i class="fab fa-vuejs"></i></li>
-                <li><i class="fab fa-angular"></i></li>
-                <li><i class="fab fa-node"></i></li>
-                <li><i class="fab fa-wordpress"></i></li>
-                <li><i class="fab fa-aws"></i></li>
-                <li><i class="fab fa-docker"></i></li>
-                <li><i class="fab fa-android"></i></li>
+              <ul class="social">
+                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
               </ul>
             </div>
-            <ul>
-              <li><a href="#">X</a></li>
-              <li><a href="#">Linkedn</a></li>
-              <li><a href="#">Email</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Github</a></li>
-              <li>
-                <p>👋</p>
-              </li>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="{% static 'img/pic2.jpg' %}">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Oscar Oviedo</h3>
+                <h4 class="title">Web Developer</h4>
+              </div>
+              <ul class="social">
+                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3"></div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer">
+          <div class="marquee">
+            <ul class="marquee-content">
+              <li><i class="fab fa-github"></i></li>
+              <li><i class="fab fa-codepen"></i></li>
+              <li><i class="fab fa-free-code-camp"></i></li>
+              <li><i class="fab fa-dev"></i></li>
+              <li><i class="fab fa-react"></i></li>
+              <li><i class="fab fa-vuejs"></i></li>
+              <li><i class="fab fa-angular"></i></li>
+              <li><i class="fab fa-node"></i></li>
+              <li><i class="fab fa-wordpress"></i></li>
+              <li><i class="fab fa-aws"></i></li>
+              <li><i class="fab fa-docker"></i></li>
+              <li><i class="fab fa-android"></i></li>
             </ul>
           </div>
-        
-        </footer>
-        
-        </main>
-    </header>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/main.js" %}"></script>
+          <ul>
+            <li><a href="#">X</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Github</a></li>
+            <li><p>👋</p></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </header>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

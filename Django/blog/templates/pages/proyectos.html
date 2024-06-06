@@ -3,103 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" href="css/bootstrap.min.css">
-    <title>Document</title>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="Stylesheet" href="proyectos.css">
+    <title>Proyectos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/proyectos.css' %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-        <img src="imagenes/icono.svg" alt="Bootstrap" width="30" height="24">
-    
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link active" href="proyectos.html">Proyectos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="servicios.html">Servicios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="Agenda.html">Agendar</a>
-              </li>
-            </ul>
-          </div>
+            <img src="{% static 'imagenes/icono.svg' %}" alt="Bootstrap" width="30" height="24">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'proyectos' %}">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'agenda' %}">Agendar</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
     <header>
         <main>
             <div class="wrapper">
                 <div class="container">
-                    <input type="radio" name="slide" id="c1">
+                    <input type="radio" name="slide" id="c1" checked>
                     <label for="c1" class="card">
                         <div class="row">
                             <div class="icon">1</div>
-                                <div class="description">
-                                    <h4></h4>
-                                    <p> Desarrollo de plataformas de E-Commerce</p>
-                                </div>
+                            <div class="description">
+                                <h4></h4>
+                                <p>Desarrollo de plataformas de E-Commerce</p>
+                            </div>
                         </div>
                     </label>
                     <input type="radio" name="slide" id="c2">
                     <label for="c2" class="card">
                         <div class="row">
                             <div class="icon">2</div>
-                                <div class="description">
-                                    <h4></h4>
-                                    <p> Sistemas de automatización de procesos empresariales</p>
-                                </div>
+                            <div class="description">
+                                <h4></h4>
+                                <p>Sistemas de automatización de procesos empresariales</p>
+                            </div>
                         </div>
                     </label>
                     <input type="radio" name="slide" id="c3">
                     <label for="c3" class="card">
                         <div class="row">
                             <div class="icon">3</div>
-                                <div class="description">
-                                    <h4></h4>
-                                    <p> Desarrollo de asistencia virtual para servicio al cliente </p>
-                                </div>
+                            <div class="description">
+                                <h4></h4>
+                                <p>Desarrollo de asistencia virtual para servicio al cliente</p>
+                            </div>
                         </div>
                     </label>
                     <input type="radio" name="slide" id="c4">
                     <label for="c4" class="card">
                         <div class="row">
                             <div class="icon">4</div>
-                                <div class="description">
-                                    <h4></h4>
-                                    <p> Plataforma de análisis predictivo para empresas</p>
-                                </div>
+                            <div class="description">
+                                <h4></h4>
+                                <p>Plataforma de análisis predictivo para empresas</p>
+                            </div>
                         </div>
                     </label>
-
+                </div>
+            </div>
         </main>
-        <footer>
-          <div class="footer">
-            <ul>
-              <li><a href="#">X</a></li>
-              <li><a href="#">Linkedn</a></li>
-              <li><a href="#">Email</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Github</a></li>
-              <li>
-                <p>👋</p>
-              </li>
-            </ul>
-          </div>
-
-        </footer>
     </header>
-    <script src="js/bootstrap.bundle.min.js"></script>  
-    
+    <footer>
+        <div class="footer">
+            <ul>
+                <li><a href="#">X</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><p>👋</p></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
+

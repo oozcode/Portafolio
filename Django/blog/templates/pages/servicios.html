@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="custom.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="imagenes/icono.svg" alt="Bootstrap" width="30" height="24">
+                <img src="{% static 'img/icono.svg' %}" alt="Bootstrap" width="30" height="24">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                            <a class="nav-link" href="{% url 'proyectos' %}">Proyectos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="servicios.html">Servicios</a>
+                            <a class="nav-link active" href="{% url 'servicios' %}">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
+                            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="Agenda.html">Agendar</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'agenda' %}">Agendar</a>
                         </li>
                     </ul>
                 </div>
@@ -45,35 +45,35 @@
                 <div class="servicio">
                     <h1 class="titulo-servicio">Nuestros servicios<span></span></h1>
                     <div class="cartas">
-                        <div class="carta" data-mensaje="Servicios de soluciones informaticas">
-                            <j class="fa-brands fa-chromecast"></j>
+                        <div class="carta" data-mensaje="Servicios de soluciones informáticas">
+                            <i class="fa-brands fa-chromecast"></i>
                             <h2>Soluciones informáticas</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
-                        <div class="carta" data-mensaje="Servicios de gestion y base de datos">
-                            <j class="fa-solid fa-layer-group"></j>
+                        <div class="carta" data-mensaje="Servicios de gestión y base de datos">
+                            <i class="fa-solid fa-layer-group"></i>
                             <h2>Base de datos</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
                         <div class="carta" data-mensaje="Servicios de diseño web">
-                            <j class="fa-solid fa-user-group"></j>
+                            <i class="fa-solid fa-user-group"></i>
                             <h2>Diseño web</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
-                        <div class="carta" data-mensaje="Asesorias para empresas y particulares">
-                            <j class="fa-solid fa-desktop"></j>
+                        <div class="carta" data-mensaje="Asesorías para empresas y particulares">
+                            <i class="fa-solid fa-desktop"></i>
                             <h2>Asesoría informática</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
-                        <div class="carta" data-mensaje="Creacion y desarrollo de videojuegos">
-                            <j class="fa-solid fa-gamepad"></j>
+                        <div class="carta" data-mensaje="Creación y desarrollo de videojuegos">
+                            <i class="fa-solid fa-gamepad"></i>
                             <h2>Videojuegos</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
                         <div class="carta" data-mensaje="Otros">
-                            <j class="fa-solid fa-gear"></j>
+                            <i class="fa-solid fa-gear"></i>
                             <h2>Otros</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
                         </div>
                     </div>
                 </div>
@@ -94,26 +94,24 @@
     </footer>
 
     <!-- Bootstrap Modal -->
-   
-   <!-- Bootstrap Modal -->
-<div class="modal" id="bootstrapModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="Agenda.html" class="btn btn-primary">Agendar</a>
+    <div class="modal" id="bootstrapModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="{% url 'agenda' %}" class="btn btn-primary">Agendar</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-    <script src="main.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

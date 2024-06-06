@@ -7,7 +7,7 @@
 
 body {
     background-color:#b0b0ba;
-    background-image: url(imagenes/fondo1.jpg);
+    background-image: url(../img/fondo1.jpg);
 }
 
 .wrapper {
@@ -92,13 +92,13 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-    background-image: url(imagenes/e-comerce.jpg);
+    background-image: url(../img/e-comerce.jpg);
 }
 .card[for="c2"] {
-    background-image: url(imagenes/img-2.jpg);
+    background-image: url(../img/img-2.jpg);
 }
 .card[for="c3"] {
-    background-image: url(imagenes/img-3.jpeg);
+    background-image: url(../img/img-3.jpeg);
 }
 .card[for="c4"] {
     background-image: url(imagenes/img-4.jpeg);
