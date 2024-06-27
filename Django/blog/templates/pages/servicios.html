@@ -42,36 +42,15 @@
                 <div class="servicio">
                     <h1 class="titulo-servicio">Nuestros servicios<span></span></h1>
                     <div class="cartas">
-                        <div class="carta" data-mensaje="Servicios de soluciones informáticas">
-                            <j class="fa-brands fa-chromecast"></j>
-                            <h2>Soluciones informáticas</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
+                    {% for p in servicios%}
+                        <div class="carta" data-mensaje="{{p.descripcion}}">
+                            {% if p.imagen %}
+                            <img src="{{ p.imagen.url }}" alt="{{ p.nombre }}" class="j">
+                            {% endif %}
+                            <h2>{{p.nombre}}</h2>
+                            <p>{{p.informacion}}</p>
                         </div>
-                        <div class="carta" data-mensaje="Servicios de gestión y base de datos">
-                            <j class="fa-solid fa-layer-group"></j>
-                            <h2>Base de datos</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
-                        </div>
-                        <div class="carta" data-mensaje="Servicios de diseño web">
-                            <j class="fa-solid fa-user-group"></j>
-                            <h2>Diseño web</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
-                        </div>
-                        <div class="carta" data-mensaje="Asesorías para empresas y particulares">
-                            <j class="fa-solid fa-desktop"></j>
-                            <h2>Asesoría informática</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
-                        </div>
-                        <div class="carta" data-mensaje="Creación y desarrollo de videojuegos">
-                            <j class="fa-solid fa-gamepad"></j>
-                            <h2>Videojuegos</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
-                        </div>
-                        <div class="carta" data-mensaje="Otros">
-                            <j class="fa-solid fa-gear"></j>
-                            <h2>Otros</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat explicabo ab, sit eius quisquam dolore temporibus ea ipsam minus.</p>
-                        </div>
+                    {% endfor %}
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Servicio
 
 def index(request):
     context = {}
@@ -17,5 +18,9 @@ def blog(request):
     return render(request, 'pages/blog.html', context)
 
 def servicios(request):
+    servicios = Servicio.objects.all()
+    data={
+        'servicios': servicios
+    }
     context = {}
-    return render(request, 'pages/servicios.html', context)
+    return render(request, 'pages/servicios.html', data)

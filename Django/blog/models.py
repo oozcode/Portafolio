@@ -3,8 +3,10 @@ from django.db import models
 # Create your models here.
 class Servicio(models.Model):
     nombre = models.CharField(max_length=50)
-    Imagen = models.ImageField()
+    Imagen = models.ImageField(upload_to="servicios",null=True)
     descripcion=models.TextField()
+    informacion = models.CharField(max_length=100, default='Valor predeterminado')
+
 
     def __str__(self):
         return self.nombre
