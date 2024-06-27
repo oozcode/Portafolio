@@ -14,6 +14,7 @@ class agendar (models.Model):
     nombre = models.CharField(max_length=50)
     telefono = models.IntegerField(max_length=30)
     correo = models.EmailField (max_length=100,unique=True,blank=True,null=True)
+    fecha = models.DateField()
     especialista = models.ForeignKey(especialista,on_delete=models.CASCADE)
     servicio = models.ForeignKey(Servicio,on_delete=models.PROTECT)
 
