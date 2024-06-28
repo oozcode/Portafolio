@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import Servicio
 from .forms import ServicioForm
+from django.contrib import messages
+from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required, permission_required
 
 def index(request):
     context = {}
@@ -26,6 +29,7 @@ def servicios(request):
     context = {}
     return render(request, 'pages/servicios.html', data)
 
+@permission_required('blog.add_servicio')
 def agregar_servicio(request):
 
     data = {
@@ -35,11 +39,13 @@ def agregar_servicio(request):
         formulario = ServicioForm(data=request.POST, files= request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Servicio agregado exitosamente"
+            messages.success(request, "Servicio Agregado")
+            return redirect(to="listar_servicio")
         else:
             data["form"] = formulario
     return render(request, "pages/agregar_servicio.html",data)
 
+@permission_required('blog.add_servicio')
 def listar_servicio(request):
     servicios = Servicio.objects.all()
 
@@ -49,6 +55,7 @@ def listar_servicio(request):
     
     return render(request,"pages/listar_servicio.html",data)
 
+@permission_required('blog.add_servicio')
 def modificar_servicio(request, id):
 
     servicios = get_object_or_404(Servicio, id=id)
@@ -60,13 +67,16 @@ def modificar_servicio(request, id):
         formulario = ServicioForm(data=request.POST, instance=servicios, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request,"Modificado exitosamente")
             return redirect(to="listar_servicio")
         else:
             data["form"] = formulario
 
     return render(request,"pages/modificar_servicio.html",data)
 
+@permission_required('blog.add_servicio')
 def eliminar_servicio(request,id):
     servicios = get_object_or_404(Servicio, id=id)
     servicios.delete()
+    messages.success(request,"Eliminado exitosamente")
     return redirect(to="listar_servicio")

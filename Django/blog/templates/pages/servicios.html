@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -31,6 +32,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                         </li>
+                        {% if perms.blog.add_servicio %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'listar_servicio' %} ">CRUD Servicios</a>
+                        </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                            </li>
+                            <li >
+                              <a class="nav-link" href="#">@{{ user.username }}</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
