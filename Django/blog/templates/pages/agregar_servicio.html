@@ -36,43 +36,31 @@
             </div>
         </nav>
     </header>
-
+    <div id="formulario">
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-body">
-                <form action="" method="post">
 
-                    {% csrf_token %}
-                    {{ form }}
-                    <div class="d-flex justify-content-center">
-                        <input type="reset" value="Limpiar" class="btn btn-secondary">
-                        <input type="submit" value="Agregar" class="btn btn-primary">
+                    <div class="card">
+                        <div class="card-body">
+                        <h2>Agregar Servicio</h2>
+                        <hr>
+                        <form action="" method="post" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class="d-flex justify-content-center">
+                                <input type="reset" value="Limpiar" class="btn btn-secondary">
+                                <input type="submit" value="Agregar" class="btn btn-primary">
+                            </div>
+                        </form>
+                        {{mensaje}}
+                    </div>
                     </div>
 
-
-                </form>
-                
             </div>
         </div>
-
-
     </div>
-</div>
 </body>
-<footer>
-    <div class="footer">
-        <ul>
-            <li><a href="#">X</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><p>👋</p></li>
-        </ul>
-    </div>
-</footer>
-
 <!-- Bootstrap Modal -->
 <div class="modal" id="bootstrapModal" tabindex="-1">
     <div class="modal-dialog">
