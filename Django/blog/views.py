@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Servicio
+from .forms import ServicioForm
 
 def index(request):
     context = {}
@@ -24,3 +25,11 @@ def servicios(request):
     }
     context = {}
     return render(request, 'pages/servicios.html', data)
+
+def agregar_servicio(request):
+
+    data = {
+        'form': ServicioForm()
+    }
+    context = {}
+    return render(request, "pages/agregar.html",data)
