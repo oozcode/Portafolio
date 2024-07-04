@@ -86,15 +86,19 @@
           </div>
         </div>
       </div>
+      {% load humanize %}
       <div class="contain">
-        <div class="row">
+        {% for p in Especialistas %}
+          {% if forloop.first %}<div class="row">{% endif %}
           <div class="col-12 col-sm-6 col-md-4">
             <div class="our-team">
               <div class="picture">
-                <img class="img-fluid" src="{% static 'img/pic1.jpg' %}">
+                {% if p.imagen %}
+                <img class="img-fluid" src="{{ p.imagen.url }}">
+                {% endif %}
               </div>
               <div class="team-content">
-                <h3 class="name">Antonio Lankin</h3>
+                <h3 class="name">{{ p.nombre|capfirst }}</h3>
                 <h4 class="title">Web Developer</h4>
               </div>
               <ul class="social">
@@ -105,42 +109,9 @@
               </ul>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="our-team">
-              <div class="picture">
-                <img class="img-fluid" src="{% static 'img/bastian.jpg' %}">
-              </div>
-              <div class="team-content">
-                <h3 class="name">Bastian Carcamo</h3>
-                <h4 class="title">Web Developer</h4>
-              </div>
-              <ul class="social">
-                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="our-team">
-              <div class="picture">
-                <img class="img-fluid" src="{% static 'img/pic2.jpg' %}">
-              </div>
-              <div class="team-content">
-                <h3 class="name">Oscar Oviedo</h3>
-                <h4 class="title">Web Developer</h4>
-              </div>
-              <ul class="social">
-                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3"></div>
-        </div>
+          {% if forloop.counter|divisibleby:3 and not forloop.last %}</div><div class="row">{% endif %}
+          {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
       </div>
       <footer>
         <div class="footer">

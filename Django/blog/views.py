@@ -6,8 +6,12 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
 
 def index(request):
+    Especialistas = especialista.objects.all()
+    data = {
+        'Especialistas':Especialistas
+    }
     context = {}
-    return render(request, 'pages/index.html', context)
+    return render(request, 'pages/index.html', data)
 
 def proyectos(request):
     context = {}
