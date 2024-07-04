@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect , get_object_or_404
-from .models import Servicio
-from .forms import ServicioForm
+from .models import Servicio,especialista
+from .forms import ServicioForm,ProfesionalForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -80,3 +80,49 @@ def eliminar_servicio(request,id):
     servicios.delete()
     messages.success(request,"Eliminado exitosamente")
     return redirect(to="listar_servicio")
+
+def agregar_profesional(request):
+    data={
+        'form':ProfesionalForm
+    }
+    if request.method =='POST':
+        formulario=ProfesionalForm(data=request.POST,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="guardado correctamente"
+            return redirect(to="listar_profesional")
+        else:
+            data["form"]=formulario
+            
+    return render(request,"pages/agregar_profesional.html",data)
+
+def listar_profesional(request):
+ especialistas = especialista.objects.all()
+ data={
+     'especialistas':especialistas
+    }
+ return render(request,"pages/listar_profesional.html",data)
+
+def modificar_profesional(request, id):
+    especialistas = get_object_or_404(especialista, id=id)
+    data = {
+        'form': ProfesionalForm(instance=especialistas)
+    }
+
+    if request.method == 'POST':
+        formulario = ProfesionalForm(data=request.POST, instance=especialistas, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado exitosamente")
+            return redirect(to="listar_profesional")
+        else:
+            data["form"] = formulario
+    return render(request, "pages/modificar_profesional.html", data)
+
+def eliminar_profesional (request,id):
+    especialistas = get_object_or_404(especialista,id=id)
+    especialistas.delete()
+    return redirect(to="listar_profesional")
+ 
+
+  
