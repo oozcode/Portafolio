@@ -1,5 +1,5 @@
 from django import forms
-from .models import Servicio,especialista
+from .models import Servicio,especialista,agendar
 
 class ServicioForm(forms.ModelForm):
 
@@ -11,3 +11,8 @@ class ProfesionalForm(forms.ModelForm):
     class Meta:
         model = especialista
         fields = '__all__'
+
+class AgendarForm(forms.ModelForm):
+    class Meta:
+        model=agendar
+        fields=["servicio","especialista"]

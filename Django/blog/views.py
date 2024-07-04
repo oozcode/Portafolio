@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import Servicio,especialista
-from .forms import ServicioForm,ProfesionalForm
+from .models import agendar
+from .forms import ServicioForm,ProfesionalForm,AgendarForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -17,9 +18,39 @@ def proyectos(request):
     context = {}
     return render(request, 'pages/proyectos.html', context)
 
+
+
 def agenda(request):
-    context = {}
-    return render(request, 'pages/agenda.html', context)
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        telefono = request.POST.get('telefono')
+        correo = request.POST.get('correo')
+        fecha = request.POST.get('fecha')
+        
+        # Obtener el servicio y el especialista
+        servicio = Servicio.objects.get(nombre='JUEGOS')  # Ejemplo de obtención de servicio
+        especialista = especialista.objects.get(nombre='Antonio Lankin')  # Ejemplo de obtención de especialista
+        
+        # Validar y guardar en la base de datos si todos los campos están presentes
+        if nombre and telefono and correo and fecha and servicio and especialista:
+            agenda = agendar(
+                nombre=nombre,
+                telefono=telefono,
+                correo=correo,
+                fecha=fecha,
+                servicio=servicio,
+                especialista=especialista
+            )
+            agenda.save()  # Guardar la instancia de agendar en la base de datos
+            
+            # Redirigir a alguna página de éxito después de guardar
+            return redirect('pages/servicios.html')  # Cambia 'pages/servicios.html' por la URL a la que quieres redirigir después de guardar
+
+    else:
+        form = AgendarForm()
+    
+    data = {'form': form}
+    return render(request, 'pages/agenda.html', data)
 
 def blog(request):
     context = {}
@@ -127,6 +158,9 @@ def eliminar_profesional (request,id):
     especialistas = get_object_or_404(especialista,id=id)
     especialistas.delete()
     return redirect(to="listar_profesional")
+
+
+
  
 
   
