@@ -15,7 +15,4 @@ urlpatterns = [
     path("listar_profesional/",views.listar_profesional,name="listar_profesional"),
     path("modificar_profesional/<id>/",views.modificar_profesional,name="modificar_profesional"),
     path("eliminar_profesional/<id>/",views.eliminar_profesional,name="eliminar_profesional"),
-    path("listar_agenda/",views.listar_agenda,name="listar_agenda"),
-    path("modificar_agenda/<id>/",views.modificar_agenda,name="modificar_agenda"),
-    path("eliminar_agenda/<id>/",views.eliminar_agenda,name="eliminar_agenda"),
 ]
