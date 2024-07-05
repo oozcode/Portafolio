@@ -67,7 +67,7 @@
                     <img class="imgagenda" src="{% static 'img/imagen_agendar.png' %}" alt="bootstrap" width="70%">
                 </div>
             </div>
-            <form action="{%url 'agenda/'%}" id="formulario" method="post">
+            <form action="{%url 'agenda'%}" id="formulario" method="post">
                 {% csrf_token %}
                 <div class="input-box">
                     <input type="text" placeholder="NOMBRE Y APELLIDO" name="nombre" id="name">
