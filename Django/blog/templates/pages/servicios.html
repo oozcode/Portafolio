@@ -66,7 +66,7 @@
                     {% for p in servicios%}
                         <div class="carta" data-mensaje="{{p.descripcion}}">
                             {% if p.imagen %}
-                            <img src="{{ p.imagen.url }}" alt="{{ p.nombre }}" class="j">
+                            <img src="{{ p.Imagen.url }}" alt="{{ p.nombre }}" class="j">
                             {% endif %}
                             <h2>{{p.nombre}}</h2>
                             <p>{{p.informacion}}</p>
