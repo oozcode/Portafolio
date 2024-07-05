@@ -72,6 +72,7 @@
                     <th>Mensaje</th>
                     <th>Especialista</th>
                     <th>Servicio</th>
+                    <th>opciones</th>
                 </tr>
         
                 {% for p in agendar %}
@@ -93,8 +94,6 @@
                 
             </table>
             <hr>
-            <div class="d-flex justify-content-center mt-3">
-                <a href="{% url 'agregar_profesional' %}" class="btn btn-primary btn-sm">Agregar</a>
-            </div>
+            
         </card>
     </div>

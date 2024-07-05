@@ -38,7 +38,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'listar_profesional' %} ">CRUD especialistas</a>
-                          </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'listar_agenda' %} ">CRUD agenda</a>
+                        </li>
                         {% endif %}
                         {% if user.is_authenticated %}
                             <li class="nav-item">
@@ -65,7 +68,7 @@
                     <div class="cartas">
                     {% for p in servicios%}
                         <div class="carta" data-mensaje="{{p.descripcion}}">
-                            {% if p.imagen %}
+                            {% if p.Imagen %}
                             <img src="{{ p.Imagen.url }}" alt="{{ p.nombre }}" class="j">
                             {% endif %}
                             <h2>{{p.nombre}}</h2>
