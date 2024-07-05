@@ -159,8 +159,48 @@ def eliminar_profesional (request,id):
     especialistas.delete()
     return redirect(to="listar_profesional")
 
+def agregar_agenda(request):
+    data={
+        'form':AgendarForm
+    }
+    if request.method =='POST':
+        formulario=ProfesionalForm(data=request.POST,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="guardado correctamente"
+            return redirect(to="listar_agenda")
+        else:
+            data["form"]=formulario
+            
+    return render(request,"pages/agregar_agenda.html",data)
 
+def listar_agenda(request):
+ agenda = agendar.objects.all()
+ data={
+     'agenda':agenda
+    }
+ return render(request,"pages/listar_agenda.html",data)
 
+def modificar_agenda(request, id):
+    agenda = get_object_or_404(especialista, id=id)
+    data = {
+        'form': AgendarForm(instance=agenda)
+    }
+
+    if request.method == 'POST':
+        formulario = ProfesionalForm(data=request.POST, instance=agenda, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado exitosamente")
+            return redirect(to="listar_agenda")
+        else:
+            data["form"] = formulario
+    return render(request, "pages/modificar_agenda.html", data)
+
+def eliminar_agenda (request,id):
+    especialistas = get_object_or_404(agendar,id=id)
+    especialistas.delete()
+    return redirect(to="listar_agenda")
  
 
   
