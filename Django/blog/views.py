@@ -22,35 +22,47 @@ def proyectos(request):
 
 def agenda(request):
     if request.method == 'POST':
+        # Capturar los datos ingresados manualmente
         nombre = request.POST.get('nombre')
         telefono = request.POST.get('telefono')
         correo = request.POST.get('correo')
         fecha = request.POST.get('fecha')
-        
-        # Obtener el servicio y el especialista
-        servicio = Servicio.objects.get(nombre='JUEGOS')  # Ejemplo de obtención de servicio
-        especialista = especialista.objects.get(nombre='Antonio Lankin')  # Ejemplo de obtención de especialista
-        
-        # Validar y guardar en la base de datos si todos los campos están presentes
-        if nombre and telefono and correo and fecha and servicio and especialista:
-            agenda = agendar(
-                nombre=nombre,
-                telefono=telefono,
-                correo=correo,
-                fecha=fecha,
-                servicio=servicio,
-                especialista=especialista
-            )
-            agenda.save()  # Guardar la instancia de agendar en la base de datos
-            
-            # Redirigir a alguna página de éxito después de guardar
-            return redirect('pages/servicios.html')  # Cambia 'pages/servicios.html' por la URL a la que quieres redirigir después de guardar
+        servicio = request.POST.get('servicio')
+        especialista = request.POST.get('especialista')
+
+        # Validación básica de datos (opcional)
+        if not nombre or not telefono or not correo or not fecha or not servicio or not especialista:
+            # Faltan datos del formulario
+            return render(request, 'pages/agenda.html', {'error': 'Faltan datos del formulario'})
+
+        # Obtener el servicio y el especialista por los nombres ingresados
+        servicio = Servicio.objects.filter(nombre=servicio).first()
+        especialista = especialista.objects.filter(nombre=especialista).first()
+
+        # Verificar si se encontraron el servicio y el especialista
+        if not servicio or not especialista:
+            # No se encontraron el servicio o especialista especificados
+            return render(request, 'pages/agenda.html', {'error': 'Servicio o especialista no encontrado'})
+
+        # Crear y guardar la instancia de agendar
+        agenda = agendar(
+            nombre=nombre,
+            telefono=telefono,
+            correo=correo,
+            fecha=fecha,
+            servicio=servicio,
+            especialista=especialista
+        )
+        agenda.save()
+
+        # Redirigir a la página de éxito
+        return redirect('pages/servicios.html')  # Cambia la URL por la correcta
 
     else:
         form = AgendarForm()
-    
-    data = {'form': form}
-    return render(request, 'pages/agenda.html', data)
+        data = {'form': form}
+        return render(request, 'pages/agenda.html', data)
+
 
 def blog(request):
     context = {}
