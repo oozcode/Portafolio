@@ -21,36 +21,18 @@ def proyectos(request):
 
 
 def agenda(request):
-    if request.method == 'POST':
-        nombre = request.POST.get('nombre')
-        telefono = request.POST.get('telefono')
-        correo = request.POST.get('correo')
-        fecha = request.POST.get('fecha')
-        
-        # Obtener el servicio y el especialista
-        servicio = Servicio.objects.get(nombre='JUEGOS')  # Ejemplo de obtención de servicio
-        especialista = especialista.objects.get(nombre='Antonio Lankin')  # Ejemplo de obtención de especialista
-        
-        # Validar y guardar en la base de datos si todos los campos están presentes
-        if nombre and telefono and correo and fecha and servicio and especialista:
-            agenda = agendar(
-                nombre=nombre,
-                telefono=telefono,
-                correo=correo,
-                fecha=fecha,
-                servicio=servicio,
-                especialista=especialista
-            )
-            agenda.save()  # Guardar la instancia de agendar en la base de datos
-            
-            # Redirigir a alguna página de éxito después de guardar
-            return redirect('pages/servicios.html')  # Cambia 'pages/servicios.html' por la URL a la que quieres redirigir después de guardar
-
-    else:
-        form = AgendarForm()
-    
-    data = {'form': form}
-    return render(request, 'pages/agenda.html', data)
+        data = {
+        'form': AgendarForm()
+        }
+        if request.method == 'POST':
+            formulario = AgendarForm()
+            if formulario.is_valid():
+                formulario.save()
+                messages.success(request, "Agendar Agregado")
+                return redirect(to="pages/servicios.html")
+            else:
+                data["form"] = formulario
+        return render(request, 'pages/agenda.html', data)
 
 def blog(request):
     context = {}
@@ -125,7 +107,7 @@ def agregar_profesional(request):
         formulario=ProfesionalForm(data=request.POST,files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"]="guardado correctamente"
+            messages.success(request, "Especialista agregado exitosamente")
             return redirect(to="listar_profesional")
         else:
             data["form"]=formulario
@@ -161,6 +143,7 @@ def modificar_profesional(request, id):
 def eliminar_profesional (request,id):
     especialistas = get_object_or_404(especialista,id=id)
     especialistas.delete()
+    messages.success(request,"Eliminado exitosamente")
     return redirect(to="listar_profesional")
 
   

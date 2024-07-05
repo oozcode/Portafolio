@@ -59,56 +59,54 @@
         </div>
       </nav>
 
-    <main>
-      <div class="Agenda">
-        <div class="container">
+      <main>
+        <div class="Agenda">
+          <div class="container">
             <div class="box-info">
-                <h1>RESERVA CON NOSOTROS</h1>
-                <div class="links">
-                    <img class="imgagenda" src="{% static 'img/imagen_agendar.png' %}" alt="bootstrap" width="70%">
-                </div>
+              <h1>RESERVA CON NOSOTROS</h1>
+              <div class="links">
+                <img class="imgagenda" src="{% static 'img/imagen_agendar.png' %}" alt="bootstrap" width="70%">
+              </div>
             </div>
-            <form action="{%url 'agenda'%}" id="formulario" method="post">
-                {% csrf_token %}
-                <div class="input-box">
-                    <input type="text" placeholder="NOMBRE Y APELLIDO" name="nombre" id="name">
-                    <i class="fa-solid fa-user"></i>
+            <form action="{% url 'agenda' %}" id="formulario" method="post">
+              {% csrf_token %}
+              <div class="input-box">
+                <input type="text" placeholder="NOMBRE Y APELLIDO" name="nombre" id="name" required>
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="input-box">
+                <input type="number" placeholder="TELÉFONO" name="telefono" id="numero" required>
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="input-box">
+                <input type="email" placeholder="CORREO ELECTRONICO" name="correo" id="email" required>
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="input-box">
+                <textarea cols="30" rows="10" placeholder="ESCRIBE TU MENSAJE" name="mensaje" required></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label for="id_especialista">Seleccione Especialista</label>
+                  {{ form.especialista }}
                 </div>
-                <div class="input-box">
-                    <input type="number" placeholder="TELÉFONO" name="telefono" id="numero">
-                    <i class="fa-solid fa-phone"></i>
+                <div class="col-md-6 mb-2">
+                  <label for="id_servicio">Seleccione Servicio</label>
+                  {{ form.servicio }}
                 </div>
-                <div class="input-box">
-                    <input type="email" placeholder="CORREO ELECTRONICO" name="correo" id="email">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="input-box">
-                    <textarea cols="30" rows="10" placeholder="ESCRIBE TU MENSAJE" name="mensaje"></textarea>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-2">
-                        <label for="id_especialista">Seleccione Especialista</label>
-                        {{ form.especialista }}
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="id_servicio">Seleccione Servicio</label>
-                        {{ form.servicio }}
-                    </div>
-                </div>
-                <div class="date">
-                    <input type="date" id="datepicker" name="fecha" required placeholder="fecha">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div id="calendar-container"></div>
-                <br>
-                <button type="submit" id="submitButton">ENVIAR MENSAJE</button>
+              </div>
+              <div class="date">
+                <input type="date" id="datepicker" name="fecha" required placeholder="fecha">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div id="calendar-container"></div>
+              <br>
+              <button type="submit" id="submitButton">Agendar</button>
             </form>
+          </div>
         </div>
-    </div>
-    
-    
-    
-    </main>
+      </main>
+      
     <footer>
       <div class="footer">
         <ul>

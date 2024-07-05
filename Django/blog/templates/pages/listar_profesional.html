@@ -9,6 +9,30 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+{% block js %}
+
+<script>
+    function eliminarProfesional(id){
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text": "Esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No, Cancelar",
+            "confirmButtonText":"Si, Eliminar",
+            "reverseButtons":true,
+            "confirmButtonColor":"#dc3545"
+
+        })
+        .then(function(result){
+            if(result.isConfirmed){
+                window.location.href="/blog/eliminar_profesional/"+id+"/"
+            }
+        })
+    }
+</script>
+
+{% endblock %}
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -72,7 +96,7 @@
                         <td>{{ p.nombre | title }}</td>
                         <td>
                             <a href="{% url 'modificar_profesional' p.id%}" class="btn btn-info btn-sm">Modificar</a>
-                            <a href="{% url 'eliminar_profesional' p.id%}" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a href="#" onclick="eliminarProfesional({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>
                     </tr>
                     
@@ -85,3 +109,20 @@
             </div>
         </card>
     </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %}
+    {% for m in messages %}
+        <script>
+            Swal.fire({
+                "title": "Felicitaciones",
+                "text": "{{m}}",
+                "icon":"success"
+            })
+        </script>
+    {% endfor %}
+{% endif %}
+
+</html>

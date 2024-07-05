@@ -14,5 +14,5 @@ class ProfesionalForm(forms.ModelForm):
 
 class AgendarForm(forms.ModelForm):
     class Meta:
-        model=agendar
-        fields=["servicio","especialista"]
+        model = agendar
+        fields = ['nombre', 'telefono', 'correo', 'mensaje', 'fecha', 'servicio', 'especialista']
