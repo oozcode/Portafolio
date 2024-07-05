@@ -116,6 +116,7 @@ def eliminar_servicio(request,id):
     messages.success(request,"Eliminado exitosamente")
     return redirect(to="listar_servicio")
 
+@permission_required('blog.add_servicio')
 def agregar_profesional(request):
     data={
         'form':ProfesionalForm
@@ -131,6 +132,7 @@ def agregar_profesional(request):
             
     return render(request,"pages/agregar_profesional.html",data)
 
+@permission_required('blog.add_servicio')
 def listar_profesional(request):
  especialistas = especialista.objects.all()
  data={
@@ -138,6 +140,7 @@ def listar_profesional(request):
     }
  return render(request,"pages/listar_profesional.html",data)
 
+@permission_required('blog.add_servicio')
 def modificar_profesional(request, id):
     especialistas = get_object_or_404(especialista, id=id)
     data = {
@@ -154,13 +157,14 @@ def modificar_profesional(request, id):
             data["form"] = formulario
     return render(request, "pages/modificar_profesional.html", data)
 
+@permission_required('blog.add_servicio')
 def eliminar_profesional (request,id):
     especialistas = get_object_or_404(especialista,id=id)
     especialistas.delete()
     return redirect(to="listar_profesional")
 
 
-
+@permission_required('blog.add_servicio')
 def listar_agenda(request):
  agenda = agendar.objects.all()
  data={
@@ -168,6 +172,7 @@ def listar_agenda(request):
     }
  return render(request,"pages/listar_agenda.html",data)
 
+@permission_required('blog.add_servicio')
 def modificar_agenda(request, id):
     agenda = get_object_or_404(especialista, id=id)
     data = {
@@ -184,6 +189,7 @@ def modificar_agenda(request, id):
             data["form"] = formulario
     return render(request, "pages/modificar_agenda.html", data)
 
+@permission_required('blog.add_servicio')
 def eliminar_agenda (request,id):
     especialistas = get_object_or_404(agendar,id=id)
     especialistas.delete()
