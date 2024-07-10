@@ -52,7 +52,7 @@
             <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
                 {% csrf_token %}
             </form>
-        {% else %}
+            {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
             </li>

@@ -41,16 +41,21 @@
                     
                         {% endif %}
                         {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
-                            </li>
-                            <li >
-                              <a class="nav-link" href="#">@{{ user.username }}</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Cerrar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">@{{ user.username }}</a>
+                        </li>
+                        <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+                            {% csrf_token %}
+                        </form>
                         {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
